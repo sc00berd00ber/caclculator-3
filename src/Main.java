@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        NumberFormat.getCurrencyInstance();
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
         Scanner input = new Scanner(System.in);
 
         System.out.println("Enter Monthly Payout (no commas) ($): ");
@@ -20,7 +20,7 @@ public class Main {
 
         double pv = monthlyPayout * (1 - Math.pow(1 + monthlyInterestRate, -months)) / monthlyInterestRate;
 
-        System.out.printf("Present Value: %.2f \n", pv);
+        System.out.println("Present Value: \n" + currency.format(pv));
 
     }
 }
